@@ -2,21 +2,23 @@ import random
 from copy import deepcopy
 
 cards = []
-two = ["2"] * 8
-three = ["3"] * 8
-four = ["4"] * 8
-five = ["5"] * 8
-six = ["6"] * 8
-seven = ["7"] * 8
-eight = ["8"] * 8
-nine = ["9"] * 8
-ten = ["10"] * 8
-J = ["J"] * 8
-Q = ["Q"] * 8
-K = ["K"] * 8
-A = ["A"] * 8
-King = ['King'] * 2
-Queen = ['Queen'] * 2
+N = 2
+
+two = ["2"] * 4 * N
+three = ["3"] * 4 * N
+four = ["4"] * 4 * N
+five = ["5"] * 4 * N
+six = ["6"] * 4 * N
+seven = ["7"] * 4 * N
+eight = ["8"] * 4 * N
+nine = ["9"] * 4 * N
+ten = ["10"] * 4 * N
+J = ["J"] * 4 * N
+Q = ["Q"] * 4 * N
+K = ["K"] * 4 * N
+A = ["A"] * 4 * N
+King = ['King'] * 1 * N
+Queen = ['Queen'] * 1 * N
 
 cards.extend(two)
 cards.extend(three)
@@ -51,7 +53,6 @@ Farmer_C = Player()
 Landowner = Player()
 
 
-# 发牌
 def deliver_cards(cards, n):
 	i = 0
 	list = []
@@ -61,6 +62,7 @@ def deliver_cards(cards, n):
 		cards.pop(j)
 		i += 1
 	return list
+
 
 def judge_bomb(player, cards):
 	list = set(cards)
